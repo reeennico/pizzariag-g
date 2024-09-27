@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Pizzaria G&G</title>
+    <link rel="icon" href="logo.jpg" type="image/jpg"> <!-- Logomarca na aba -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS inline -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            background-image: url('pizza.jpeg');  
+            background-size: contain;  
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: darken;
+            height: 210px;  
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;  
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 110px;
+            height: auto;
+        }
+
+        .nav-menu {
+            background-color: black;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .nav-menu ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu ul li {
+            margin: 0 15px;
+        }
+
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-menu ul li a i {
+            margin-right: 5px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #f24444;
+        }
+
+        .biography-section {
+            margin-bottom: 40px;
+        }
+
+        .biography-section img {
+            float: left;
+            margin-right: 20px;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Estilos para o botão de música */
+        .music-button {
+            background-color: #f24444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .music-button:hover {
+            background-color: #d93c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Pizzaria G&G" class="logo-img">
+            <h1>Sobre a Pizzaria G&G</h1>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="receitas.html"><i class="fa-solid fa-bars"></i> Receitas</a></li>
+            <li><a href="contato.html"><i class="fa-solid fa-phone"></i> Contato</a></li>
+            <li><a href="sobre.html"><i class="fa-solid fa-list"></i> Sobre</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="biography-section">
+            <h2>Nossa História</h2>
+            <img src="fundadores.jpg" alt="Interior da Pizzaria G&G">
+            <p>
+                Fundada em 2024, a Pizzaria G&G começou com a missão de trazer sabores artesanais e ingredientes frescos para o coração da cidade. 
+                O nome "G&G" vem dos fundadores, Gustavo e Gabriel, que sempre foram apaixonados pela arte de fazer pizzas. 
+                Nossa pizzaria rapidamente se tornou um ponto de encontro para famílias, amigos e amantes de boa comida, graças à nossa dedicação em oferecer uma experiência culinária única.
+            </p>
+            <p>
+                Hoje, com uma equipe dedicada e um ambiente acolhedor, a Pizzaria G&G continua a inovar com receitas exclusivas e opções clássicas que agradam todos os paladares. 
+                Desde as tradicionais pizzas salgadas até nossas deliciosas criações doces, cada prato é feito com carinho e atenção aos detalhes.
+            </p>
+        </section>
+
+        <section class="biography-section">
+            <h2>Nossa Missão</h2>
+            <p>
+                A missão da Pizzaria G&G é simples: oferecer pizzas saborosas feitas com ingredientes de alta qualidade, proporcionando um ambiente onde as pessoas possam compartilhar momentos inesquecíveis.
+                Queremos que cada cliente sinta o cuidado em cada mordida e saia de nossa pizzaria com um sorriso no rosto, satisfeito tanto com o atendimento quanto com os sabores únicos.
+            </p>
+        </section>
+
+        <section class="biography-section">
+            <h2>Venha Nos Visitar</h2>
+            <p>
+                Localizada no laboratório do campus IFPB, nossa pizzaria está de portas abertas todas as sextas de manhã. 
+                Venha nos visitar e conhecer de perto o que faz da Pizzaria G&G um lugar tão especial para tantas pessoas. 
+                Se preferir, faça seu pedido online e experimente o sabor incomparável de nossas pizzas no conforto de sua casa!
+            </p>
+        </section>
+
+        <!-- Botão de música italiana -->
+        <button class="music-button" onclick="toggleMusic()">🎵 Tocar Música Tema</button>
+
+        <!-- Player de áudio para a música italiana -->
+        <audio id="audioPlayer">
+            <source src="pizza-blues-189087.mp3" type="audio/mpeg"> <!-- Fonte da música -->
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pizzaria G&G. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        var isPlaying = false;  // Estado para saber se a música está tocando
+        var audio = document.getElementById('audioPlayer');  // Obtém o elemento de áudio
+
+        // Função para alternar entre tocar e pausar a música
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();  // Pausa a música
+                document.querySelector('.music-button').textContent = "🎵 Tocar Música Tema";  // Atualiza o texto do botão
+            } else {
+                audio.play();  // Toca a música
+                document.querySelector('.music-button').textContent = "🎵 Pausar Música Tema";  // Atualiza o texto do botão
+            }
+            isPlaying = !isPlaying;  // Alterna o estado da música
+        }
+    </script>
+</body>
+</html>

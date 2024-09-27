@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Pizzaria G&G</title>
+    <link rel="icon" href="logo.jpg" type="image/jpg"> <!-- Logomarca na aba -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS inline -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-image: url('pizza.jpeg');  /* Caminho da imagem */
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: darken;
+            height: 210px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 110px;
+            height: auto;
+        }
+
+        .nav-menu {
+            background-color: black;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .nav-menu ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu ul li {
+            margin: 0 15px;
+        }
+
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-menu ul li a i {
+            margin-right: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #f24444;
+        }
+
+        #formulario {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #formulario input, #formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #formulario button {
+            background-color: #f24444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #formulario button:hover {
+            background-color: #d63e3e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Estilos para o calculador de frete */
+        #frete-calculador {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #frete-calculador input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        #frete-calculador button {
+            background-color: #f24444;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #frete-calculador button:hover {
+            background-color: #d63e3e;
+        }
+
+        #frete-resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Estilo para o botão de música */
+        #musica-button {
+            margin-top: 30px;
+            background-color: #f24444;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #musica-button:hover {
+            background-color: #d63e3e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Pizzaria G&G" class="logo-img">
+            <h1>Fale Conosco - Pizzaria G&G</h1>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="receitas.html"><i class="fa-solid fa-bars"></i> Receitas</a></li>
+            <li><a href="contato.html"><i class="fa-solid fa-phone"></i> Contato</a></li>
+            <li><a href="sobre.html"><i class="fa-solid fa-list"></i>Sobre</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Formulário de Contato -->
+        <section id="formulario">
+            <h2>Entre em Contato</h2>
+            <form id="contato-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="telefone">Telefone:</label>
+                <input type="number" id="telefone" name="telefone" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Calculador de Frete -->
+        <section id="frete-calculador">
+            <h2>Calcular Frete</h2>
+            <!-- Input para o usuário inserir um número -->
+            <input type="number" id="numero-usuario" placeholder="Insira os quilômetros de distância da sua casa.">
+            <!-- Botão para calcular o frete -->
+            <button onclick="calcularFrete()">Calcular</button>
+            <!-- Exibe o resultado do cálculo -->
+            <div id="frete-resultado"></div>
+        </section>
+
+        <!-- Botão de Música -->
+        <section>
+            <!-- Botão que inicia ou pausa a música -->
+            <button id="musica-button" onclick="controlarMusica()">Tocar Música</button>
+            <!-- Audio para reprodução da música -->
+            <audio id="musica-fundo">
+                <source src="cooking-blues-170742.mp3" type="audio/mp3"> <!-- Certifique-se de que o arquivo "musica.mp3" esteja no diretório correto -->
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pizzaria G&G. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para o cálculo do frete e controle da música -->
+    <script>
+        // Função que calcula o frete
+        function calcularFrete() {
+            const numeroUsuario = parseFloat(document.getElementById('numero-usuario').value);  // Obtém o valor inserido pelo usuário
+            const precoBase = 5;  // Define o preço base de R$ 5,00
+
+            // Verifica se o número inserido é válido
+            if (isNaN(numeroUsuario)) {
+                document.getElementById('frete-resultado').innerHTML = "Por favor, insira um número válido.";  // Mensagem de erro
+            } else {
+                const precoFinal = precoBase + numeroUsuario;  // Calcula o preço final somando o preço base e o número inserido
+                document.getElementById('frete-resultado').innerHTML = `O valor do frete é: R$ ${precoFinal.toFixed(2)}`;  // Exibe o resultado
+            }
+        }
+
+        // Função para controlar a reprodução da música
+        function controlarMusica() {
+            const musica = document.getElementById('musica-fundo');  // Obtém o elemento de áudio
+            const botaoMusica = document.getElementById('musica-button');  // Obtém o botão de controle de música
+
+            // Verifica se a música está pausada ou tocando e alterna entre essas ações
+            if (musica.paused) {
+                musica.play();  // Toca a música
+                botaoMusica.textContent = "Pausar Música";  // Altera o texto do botão para "Pausar Música"
+            } else {
+                musica.pause();  // Pausa a música
+                botaoMusica.textContent = "Tocar Música";  // Altera o texto do botão para "Tocar Música"
+            }
+        }
+    </script>
+</body>
+</html>

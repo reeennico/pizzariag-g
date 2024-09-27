@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria G&G</title>
+    <link rel="icon" href="logo.jpg" type="image/jpg"> <!-- Define o ícone da aba com a logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para ícones Font Awesome -->
+    
+    <!-- CSS inline -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilizando o header com a imagem de fundo */
+        header {
+            background-image: url('pizza.jpeg');  /* Caminho da imagem de fundo */
+            background-size: contain;  /* Cobre todo o header */
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);  /* Fundo preto semi-transparente */
+            background-blend-mode: darken;  /* Modo de mistura de cor com a imagem de fundo */
+            height: 210px;  /* Altura do header */
+            display: flex;  /* Flexbox para centralização */
+            justify-content: center;  /* Centraliza horizontalmente */
+            align-items: flex-end;  /* Alinha o conteúdo na parte inferior do header */
+            padding: 20px;
+            color: white;  /* Texto branco */
+            position: relative;  /* Necessário para o posicionamento do botão de música */
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 110px;  /* Largura da imagem da logo */
+            height: auto;  /* Altura ajustada automaticamente */
+        }
+
+        /* Estilo para o botão de áudio no canto superior direito */
+        .music-button {
+            position: absolute;
+            top: 10px;  /* Posição no topo */
+            right: 10px;  /* Posição à direita */
+            background-color: #f24444;  /* Cor de fundo vermelha */
+            color: white;  /* Texto branco */
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;  /* Mãozinha ao passar o mouse */
+        }
+
+        /* Estilo para o menu abaixo do header */
+        .nav-menu {
+            background-color: black;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .nav-menu ul {
+            list-style-type: none;  /* Remove os marcadores da lista */
+            display: flex;
+            justify-content: center;  /* Centraliza horizontalmente */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu ul li {
+            margin: 0 15px;
+        }
+
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-menu ul li a i {
+            margin-right: 5px;  /* Espaço entre ícone e texto */
+        }
+
+        /* Estilo para a seção das categorias */
+        .category-section {
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          padding: 20px;
+        }
+
+        /* Estilo para o cartão de categoria */
+        .category-card {
+            background-image: url('pizza_header_1.webp');
+            background-color: rgba(0, 0, 0, 0.5);  /* Fundo preto semi-transparente */
+            background-blend-mode: darken;  /* Modo de mistura de cor com a imagem de fundo */
+            padding: 15px;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 20px;
+            border-radius: 20px;  /* Bordas arredondadas */
+            color: white;
+        }
+
+        /* Seção de pizzas */
+        #pizzas {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .pizza-items {
+            display: flex;
+            justify-content: space-around;  /* Distribui os itens com espaço entre eles */
+        }
+
+        section {
+            margin-bottom: 40px;  /* Espaçamento entre seções */
+        }
+
+        /* Estilo para cada item de pizza */
+        .pizza-item {
+            background-color: #f4f4f4;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;  /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra leve */
+        }
+
+        .pizza-item img {
+            width: 100%;  /* Imagem ocupa toda a largura do item */
+            border-radius: 10px;  /* Bordas arredondadas na imagem */
+        }
+
+        .pizza-item p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        /* Estilo para os botões */
+        button {
+            background-color: #f24444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;  /* Bordas arredondadas */
+        }
+
+        /* Estilo para o rodapé */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho fixo com logo e imagem de pizza -->
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Pizzaria G&G" class="logo-img"> <!-- Logo da Pizzaria -->
+            <h1>Pizzaria G&G</h1>
+        </div>
+        <!-- Botão de música clássica no canto superior direito -->
+        <button class="music-button" onclick="toggleMusic()">🎵 Tocar Música Tema</button> <!-- Botão de tocar/parar música -->
+    </header>
+
+    <!-- Menu de navegação logo abaixo do header -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li> <!-- Link para Home -->
+            <li><a href="receitas.html"><i class="fa-solid fa-bars"></i> Receitas</a></li> <!-- Link para Receitas -->
+            <li><a href="contato.html"><i class="fa-solid fa-phone"></i> Contato</a></li> <!-- Link para Contato -->
+            <li><a href="sobre.html"><i class="fa-solid fa-list"></i>Sobre</a></li> <!-- Link para Sobre -->
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Bem-vindo à Pizzaria G&G!</h2>
+            <p>Explore nosso cardápio, conheça nossa história e entre em contato para reservar uma mesa.</p>
+            <!-- Botão de "Olá" -->
+            <button onclick="sayHello()">👋 Dizer Olá</button> <!-- Botão que toca o áudio de saudação -->
+        </section>
+
+        <!-- Seção de pizzas salgadas -->
+        <section>
+            <div class="category-card">
+                <h3>Pizzas Salgadas!</h3>
+                <p>Conheça nossos sabores e monte a sua pizza ideal.</p>
+            </div>
+
+            <section id="pizzas-salgadas">
+                <div class="pizza-items">
+                    <div class="pizza-item">
+                        <img src="pizza_salgada_1.jpeg" alt="pizza1">
+                        <h3>Pizza Grande</h3>
+                        <p>35 cm, 8 fatias, até 2 sabores por pizza.</p>
+                        <p>Serve 4 pessoas.</p>
+                        <p>A partir de R$ 1,50</p>
+                    </div>
+                    <div class="pizza-item">
+                        <img src="pizza_salgada_2.jpeg" alt="pizza2">
+                        <h3>Pizza Pequena</h3>
+                        <p>25 cm, 4 fatias, até 2 sabores</p>
+                        <p>Serve 2 pessoas</p>
+                        <p>A partir de R$ 1,20</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de pizzas doces -->
+            <div class="category-card">
+                <h3>Pizzas Doces!</h3>
+                <p>Para adocicar sua vida!</p>
+            </div>
+            
+            <section id="pizzas-doces">
+                <div class="pizza-items">
+                    <div class="pizza-item">
+                        <img src="pizza_header_2.webp" alt="pizza3">
+                        <h3>Pizza Grande</h3>
+                        <p>35 cm, 8 fatias, até 2 sabores por pizza.</p>
+                        <p>Serve 4 pessoas.</p>
+                        <p>A partir de R$ 1,50</p>
+                    </div>
+                    <div class="pizza-item">
+                        <img src="pizza_doce_1.jpeg" alt="pizza4">
+                        <h3>Pizza Pequena</h3>
+                        <p>25 cm, 4 fatias, até 2 sabores.</p>
+                        <p>Serve 2 pessoas.</p>
+                        <p>A partir de R$ 1,20</p>
+                    </div>
+                </div>
+            </section>
+            <div class="category-card">
+                <h3>Bebidas!</h3>
+                <p>Porque pizza com água não dá, né.</p>
+            </div>
+            
+            <section id="bebidas">
+                <div class="pizza-items">
+                    <div class="pizza-item">
+                        <img src="pizza_header_3.webp" alt="bebida1">
+                        <p>Latinha de Guaraná</p>
+                        <p>A partir de R$ 0,50</p>
+                    </div>
+                    <div class="pizza-item">
+                        <img src="pizza_header_4.webp" alt="bebida2">
+                        <p>Latinha de Coca-Cola</p>
+                        <p>Pior que a de Guaraná</p>
+                        <p>A partir de R$ 35,00</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Pizzaria G&G. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Áudio embutido -->
+    <audio id="audioPlayer">
+        <source src="italian-tarantella-163385.mp3" type="audio/mpeg"> <!-- Fonte do áudio -->
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- JavaScript para controle de áudio e saudação -->
+    <script>
+        var isPlaying = false;  // Flag para monitorar se o áudio está tocando ou não
+        var audio = document.getElementById('audioPlayer');  // Elemento de áudio
+        var helloSound = new Audio('its-me-mario.mp3');  // Som de saudação
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();  // Pausa a música se estiver tocando
+                document.querySelector('.music-button').textContent = "🎵 Tocar Música Tema";  // Atualiza o texto do botão
+            } else {
+                audio.play();  // Toca a música se estiver pausada
+                document.querySelector('.music-button').textContent = "🎵 Pausar Música Tema";  // Atualiza o texto do botão
+            }
+            isPlaying = !isPlaying;  // Alterna o estado de isPlaying
+        }
+
+        function sayHello() {
+            if (isPlaying) {
+                audio.pause();  // Pausa a música italiana
+                isPlaying = false;
+                document.querySelector('.music-button').textContent = "🎵 Tocar Música Tema";  // Atualiza o texto do botão
+            }
+            helloSound.play();  // Toca o som de saudação
+        }
+    </script>
+</body>
+</html>

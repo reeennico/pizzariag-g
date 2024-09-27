@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas - Pizzaria G&G</title>
+    <link rel="icon" href="logo.jpg" type="image/jpg"> <!-- Logomarca na aba -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS inline -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-image: url('pizza.jpeg');  /* Caminho da imagem */
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: darken;
+            height: 210px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 110px;
+            height: auto;
+        }
+
+        .nav-menu {
+            background-color: black;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .nav-menu ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu ul li {
+            margin: 0 15px;
+        }
+
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-menu ul li a i {
+            margin-right: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #f24444;
+        }
+
+        .video-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .video-item {
+            width: 300px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;  /* Shorts são verticais, então aumentamos a altura */
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Estilização para o botão de música */
+        .music-button {
+            background-color: #f24444;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .music-button:hover {
+            background-color: #c23434;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Pizzaria G&G" class="logo-img">
+            <h1>Receitas - Pizzaria G&G</h1>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="receitas.html"><i class="fa-solid fa-bars"></i> Receitas</a></li>
+            <li><a href="contato.html"><i class="fa-solid fa-phone"></i> Contato</a></li>
+            <li><a href="sobre.html"><i class="fa-solid fa-list"></i>Sobre</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Tutoriais de Receitas</h2>
+            <p>Confira nossas receitas rápidas e deliciosas em vídeos curtos do YouTube!</p>
+
+            <!-- Botão de música -->
+            <button id="botaoMusica" class="music-button">Tocar Música</button>
+            <!-- Elemento de áudio -->
+            <audio id="musica" src="gangster-pizza-212736.mp3"></audio> <!-- Certifique-se que o arquivo "musica.mp3" está no mesmo diretório -->
+        </section>
+
+        <section class="video-section">
+            <!-- Vídeos do YouTube -->
+            <div class="video-item">
+                <p>PIZZA KHACHAPURI</p>
+                <iframe src="https://www.youtube.com/embed/shorts/cjy4I2vN4eI?si=JvcbhD_36QSOIHhO" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA DE ESPINAFRE E MILHO</p>
+                <iframe src="https://www.youtube.com/embed/shorts/AGchvVsYEzY?si=Gr5oRqi1QKqJsp-V" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA CACHORRO QUENTE</p>
+                <iframe src="https://www.youtube.com/embed/shorts/7IuZfgIwJ_8?si=zVcNgbodC0LvkrNb" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA OHIO</p>
+                <iframe src="https://www.youtube.com/embed/shorts/4hJ2JhFoRCk?si=vlHE0_PENIVessbJ" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA DE RAMEN</p>
+                <iframe src="https://www.youtube.com/embed/shorts/oYKQ9g45vJo?si=qJX6RddMypenuYkx" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA DE CEBOLA</p>
+                <p>(COM CEBOLA EXTRA!)</p>
+                <iframe src="https://www.youtube.com/embed/shorts/h1a86UfSy44?si=ZHk8NhTyVvjc-hzf" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA NEAPOLITAN</p>
+                <iframe src="https://www.youtube.com/embed/shorts/mo_NDumcL6A?si=JiWToSl5Eh0Er0zm" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA DE PANQUECA</p>
+                <iframe src="https://www.youtube.com/embed/shorts/rPYjV4aPdJw?si=kGBI33gZS9wuL5h2" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA DE MAGIA NEGRA?</p>
+                <iframe src="https://www.youtube.com/embed/shorts/FmGtNNRyZrI?si=5m-lkhE0Dc8p8TL8" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-item">
+                <p>PIZZA DO BBQ</p>
+                <iframe src="https://www.youtube.com/embed/shorts/LJ06GFyuolU?si=569oJ6qoXob3xXAk" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pizzaria G&G. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para controle da música -->
+    <script>
+        const botaoMusica = document.getElementById('botaoMusica');  // Seleciona o botão de música
+        const musica = document.getElementById('musica');  // Seleciona o elemento de áudio
+
+        // Função para tocar ou pausar a música ao clicar no botão
+        botaoMusica.addEventListener('click', () => {
+            if (musica.paused) {
+                musica.play();  // Toca a música
+                botaoMusica.textContent = "Pausar Música";  // Altera o texto do botão para "Pausar Música"
+            } else {
+                musica.pause();  // Pausa a música
+                botaoMusica.textContent = "Tocar Música";  // Altera o texto do botão para "Tocar Música"
+            }
+        });
+    </script>
+</body>
+</html>
